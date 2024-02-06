@@ -1,0 +1,18 @@
+lab_quacks feedback for chenhan.21
+g++ -std=c++11 -g -O0 -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -MMD -MP -c   -c -o tests/basic.o tests/basic.cpp
+tests/basic.cpp:18:14: fatal error: target of using declaration conflicts with declaration already in scope
+using cs225::stack;
+             ^
+tests/../stack:9:11: note: target of using declaration
+    class stack : public std::stack<T, Container> {
+          ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stack:137:28: note: conflicting declaration
+class _LIBCPP_TEMPLATE_VIS stack
+                           ^
+1 error generated.
+make: *** [tests/basic.o] Error 1
+
+./auto_grade_lab_quacks_new.sh: line 43: ./test: No such file or directory
+
+Total: 0
+If you get negative points, the only reason is that you use the std queue or std stack, which is not allowed. 

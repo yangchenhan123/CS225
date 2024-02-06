@@ -1,0 +1,106 @@
+ feedback for chenhan.21
+g++ -std=c++1y  -c -g -O0 -Wall -Wextra -pedantic cs225/PNG.cpp
+g++ -std=c++1y  -c -g -O0 -Wall -Wextra -pedantic cs225/HSLAPixel.cpp
+g++ -std=c++1y  -c -g -O0 -Wall -Wextra -pedantic cs225/lodepng/lodepng.cpp
+g++ -std=c++1y  -c -g -O0 -Wall -Wextra -pedantic Image.cpp
+g++ -std=c++1y  -c -g -O0 -Wall -Wextra -pedantic StickerSheet.cpp
+g++ -std=c++1y  -c -g -O0 -Wall -Wextra -pedantic main.cpp
+g++ -std=c++1y  -c -g -O0 -Wall -Wextra -pedantic tests/unit_tests.cpp
+g++ unit_tests.o PNG.o HSLAPixel.o lodepng.o Image.o StickerSheet.o -std=c++1y  -lpthread -lm -o test
+Filters: [weight=1]
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+test is a Catch v2.13.9 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+Image scale(1080,200) works correctly
+-------------------------------------------------------------------------------
+tests/unit_tests.cpp:112
+...............................................................................
+
+tests/unit_tests.cpp:118: FAILED:
+  REQUIRE( result.width() == 720 )
+with expansion:
+  1080 (0x438) == 720 (0x2d0)
+
+===============================================================================
+test cases:  8 |  7 passed | 1 failed
+assertions: 19 | 18 passed | 1 failed
+
++------------------------+
+| Pass 7 basic tests. +7 |
++------------------------+
+
+Filters: [weight=4][id=provided]
+1
+12
+3
+4
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+
+Filters: [weight=2][id=copy]
+1
+2
+5
+2
+5
+2
+5
+12
+12
+3
+4
+3
+4
+3
+4
+3
+4
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+
+Filters: [weight=2][id=range]
+1
+12
+3
+4
+===============================================================================
+All tests passed (8 assertions in 1 test case)
+
+
+Filters: [weight=3][id=add]
+1
+10
+7
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+test is a Catch v2.13.9 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+Add, remove and change stickers
+-------------------------------------------------------------------------------
+tests/unit_tests.cpp:197
+...............................................................................
+
+tests/unit_tests.cpp:214: FAILED:
+  REQUIRE( sheet.getSticker(3) == __null )
+with expansion:
+  0x000000014f608090 == 0
+
+3
+4
+===============================================================================
+test cases: 1 | 1 failed
+assertions: 2 | 1 passed | 1 failed
+
+
++----------------------------+
+| myImage.png looks good. +1 |
++----------------------------+
+
+Total: 8
