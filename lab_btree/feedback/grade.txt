@@ -1,0 +1,20 @@
+lab_btree feedback for chenhan.21
+g++ -std=c++1y -g -O0 -pedantic -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Werror -Wfatal-errors -MMD -MP -c test_btree.cpp -o .objs/test_btree.o
+g++ .objs/test_btree.o -std=c++1y -lpthread -o test_btree
+g++ -std=c++1y -g -O0 -pedantic -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Werror -Wfatal-errors -MMD -MP -c -fsanitize=address -fno-omit-frame-pointer test_btree.cpp -o .objs/test_btree-asan.o
+g++ .objs/test_btree-asan.o -std=c++1y -lpthread -fsanitize=address -fno-omit-frame-pointer -o test_btree-asan
+g++ -std=c++1y -g -O0 -pedantic -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Werror -Wfatal-errors -MMD -MP -c dict_racer.cpp -o .objs/dict_racer.o
+g++ .objs/dict_racer.o -std=c++1y -lpthread -O3 -o dict_racer
+g++ -std=c++1y -g -O0 -pedantic -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Werror -Wfatal-errors -MMD -MP -c   -c -o tests/basic.o tests/basic.cpp
+g++ tests/basic.o  -std=c++1y -lpthread -o test
+test_insertion_idx_emp success: +1pts
+test_insertion_idx_small success: +1pts
+test_btree3_small success: +1pts
+test_btree3_large_seq success: +1pts
+test_btree3_large_rand success: +1pts
+test_btree64_large_seq success: +1pts
+test_btree64_large_rand success: +2pts
+test_btree128_med_rand success: +1pts
+test_btree12_strings success: +1pts
+
+Total: 10
